@@ -4,23 +4,55 @@ $(function() {
   // Init ScrollMagic Controller
   var scrollMagicController = new ScrollMagic.Controller();
 
-  // Create Animation for 0.5s
-  var tween = TweenMax.to('#hello_world', 0.5, {
-    color: 'rgb(255,0,255)',
-    scale: 0.2,
-    rotation: 360
-  });
+  var tweenh1 = TweenMax.to('#h', 0.4, {
+    y: '-=50'});
 
-  // Create the Scene and trigger when visible
-  var scene = new ScrollMagic.Scene({
+  var tweenh2 = TweenMax.to('#h', 0.3, {
+    y: '+=50', delay: 0.4});
+
+
+  var sceneh1 = new ScrollMagic.Scene({
     triggerElement: '#scene1',
-    offset: 650,  /* offset the trigger 150px below #scene's top */
-    duration: 300 /* for 300 pixels down */
+    offset: 450,  /* offset the trigger 150px below #scene's top */
+    // duration: 30 /* for 300 pixels down */
   })
-  .setTween(tween)
+  .setTween(tweenh1)
+  .addIndicators()
   .addTo(scrollMagicController);
 
-  // Add debug indicators fixed on right side
-   scene.addIndicators();
+  var sceneh2 = new ScrollMagic.Scene({
+    triggerElement: '#scene1',
+    offset: 455,  /* offset the trigger 150px below #scene's top */
+    // duration: 10 /* for 300 pixels down */
+  })
+  .setTween(tweenh2)
+  .addIndicators()
+  .addTo(scrollMagicController);
+
+  var tweene1 = TweenMax.to('#e', 0.4, {
+    y: '-=50'});
+
+  var tweene2 = TweenMax.to('#e', 0.3, {
+    y: '+=50', delay: 0.4});
+
+
+  var sceneh1 = new ScrollMagic.Scene({
+    triggerElement: '#scene1',
+    offset: 470,  /* offset the trigger 150px below #scene's top */
+    // duration: 30 /* for 300 pixels down */
+  })
+  .setTween(tweene1)
+  .addIndicators()
+  .addTo(scrollMagicController);
+
+  var sceneh2 = new ScrollMagic.Scene({
+    triggerElement: '#scene1',
+    offset: 475,  /* offset the trigger 150px below #scene's top */
+    // duration: 10 /* for 300 pixels down */
+  })
+  .setTween(tweene2)
+  .addIndicators()
+  .addTo(scrollMagicController);
+
 
 });
